@@ -1,4 +1,4 @@
-SRC = main.cpp src/Bureaucrat.cpp
+SRC = main.cpp src/Bureaucrat.cpp src/Form.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 CC = c++
