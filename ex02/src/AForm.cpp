@@ -1,7 +1,7 @@
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
 
-Form &Form::operator=(const Form &f)
+AForm &AForm::operator=(const AForm &f)
 {
 	if (this != &f)
 	{
@@ -10,7 +10,7 @@ Form &Form::operator=(const Form &f)
 	return *this;
 }
 
-void Form::beSigned(const Bureaucrat &b)
+void AForm::beSigned(const Bureaucrat &b)
 {
 	std::cout<< b.getName() << " is trying to sign " << _name << "\n";
 	if (b.getGrade() < _gradeToSign)
@@ -21,12 +21,12 @@ void Form::beSigned(const Bureaucrat &b)
     throw gradeTooLowException();
 }
 
-const char *Form::gradeTooHighException::what() const throw()
+const char *AForm::gradeTooHighException::what() const throw()
 {
     return "Grade too high!";
 }
 
-const char *Form::gradeTooLowException::what() const throw()
+const char *AForm::gradeTooLowException::what() const throw()
 {
     return "Grade too low!";
 }

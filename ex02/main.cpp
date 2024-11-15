@@ -4,7 +4,10 @@
 int	main()
 {
 	try {
+    	// Bureaucrat bob("Bob", 80);
 		Form math("math", 50, 50);
+		// math.beSigned(bob);
+		// bob.signForm(math);
 		Bureaucrat flip("flip", 10);
 		math.beSigned(flip);
 		flip.signForm(math);
