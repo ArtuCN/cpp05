@@ -9,10 +9,10 @@ class PresidentialPardonForm: public AForm
 	private:
 		std::string _target;
 	public:
-		PresidentialPardonForm(std::string name) : AForm(name, 25, 5) { std::cout<< name <<" constructor called\n"; };
-		PresidentialPardonForm() : AForm("Default", 25, 5) { std::cout<< "PresidentialPardonForm constructor called\n"; }
-		PresidentialPardonForm(const PresidentialPardonForm &ppf) :  AForm(ppf){};
-		PresidentialPardonForm& operator=(const PresidentialPardonForm &ppf);
+		PresidentialPardonForm(std::string target) : _target(target) { };
+		PresidentialPardonForm() : _target("default") {};
+		PresidentialPardonForm (const PresidentialPardonForm &ppf) : _target(ppf._target) {};
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &ppf);
 		~PresidentialPardonForm() {};
 
 		std::string getName() { return AForm::getName();};
