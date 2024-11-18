@@ -18,7 +18,7 @@ class PresidentialPardonForm: public AForm
 		std::string getName() { return AForm::getName();};
 		std::string getTarget() { return _target; };
 		void execute(const Bureaucrat &executor) const;
-		void makePardon();
+		void makePardon()const;
 };
 
 #endif
