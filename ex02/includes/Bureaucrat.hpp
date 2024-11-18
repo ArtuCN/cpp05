@@ -8,7 +8,7 @@
 #include <stdexcept>
 
 
-class Form;
+class AForm;
 
 class  Bureaucrat
 {
@@ -33,17 +33,17 @@ class  Bureaucrat
 		class GradeTooLowException: public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return "Form Grade too low!\n";
+					return "AForm Grade too low!\n";
 				}
 		};
 		class GradeTooHighException: public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return "Form Grade too high!\n";
+					return "AForm Grade too high!\n";
 				}
 		};
 
-		void signForm(Form &form);
+		void signAForm(AForm &AForm);
 
 		~Bureaucrat() {};
 

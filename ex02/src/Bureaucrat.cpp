@@ -1,5 +1,5 @@
 #include "../includes/Bureaucrat.hpp"
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
     std::cout<< name <<" Bureaucrat created!\n";
@@ -34,15 +34,15 @@ void Bureaucrat::decrementGrade(const unsigned int &num) {
         throw GradeTooLowException();
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signAForm(AForm &AForm)
 {
-    if (form.getSigned() == true)
+    if (AForm.getSigned() == true)
     {
-        std::cout<< getName() << " signed " << form.getName() << std::endl;
+        std::cout<< getName() << " signed " << AForm.getName() << std::endl;
     }
     else
     {
-        std::cout<< getName() << " couldn't sign " << form.getName() << " because grade is too low\n";
+        std::cout<< getName() << " couldn't sign " << AForm.getName() << " because grade is too low\n";
     }
         
 }

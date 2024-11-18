@@ -2,6 +2,7 @@
 #define AFORM_H
 
 #include "Bureaucrat.hpp"
+#include <fstream>
 #include <exception>
 #include <iostream>
 #include <string>
@@ -25,21 +26,21 @@ class AForm
 		AForm(const AForm &f): _name(f._name), _gradeToSign(f._gradeToSign), _gradeExec(f._gradeExec), _signed(f._signed) {};
 		AForm& operator=(const  AForm &f);
 
-		std::string getName() {return _name; };
-		int getGrade() { return _gradeToSign; };
-		int getExecGrade() {return _gradeExec; } ;
-		bool getSigned() {return _signed; };
+		std::string getName() const {return _name; } 
+		int getGrade() const { return _gradeToSign; };
+		int getExecGrade() const {return _gradeExec; };
+		bool getSigned() const {return _signed; };
 
 		class gradeTooLowException: public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				const char *what() const throw();
 
 		};
 		class gradeTooHighException: public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				const char *what() const throw();
 
 		};
 		virtual void beSigned(const Bureaucrat &b);

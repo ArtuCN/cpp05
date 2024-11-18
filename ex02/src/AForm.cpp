@@ -5,7 +5,7 @@ AForm &AForm::operator=(const AForm &f)
 {
 	if (this != &f)
 	{
-		this->_signed = f._signed;
+		_signed = f._signed;
 	}
 	return *this;
 }
