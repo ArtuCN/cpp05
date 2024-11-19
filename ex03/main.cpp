@@ -41,8 +41,8 @@ int main()
 	AForm *form4 = intern.makeForm("shrubbery creation", "Target4");
 	if (form4) {
 		std::cout << "Form created successfully: " << form4->getName() << std::endl;
-		std::cout << form4->getExecGrade() << std::endl;
 		try {
+			form4->beSigned(bur);
 			bur.signAForm(*form4);
 		} catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
@@ -52,7 +52,6 @@ int main()
 		} catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
-
 		delete form4;
 	}
 	else
