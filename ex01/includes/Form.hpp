@@ -25,10 +25,10 @@ class Form
 		Form(const Form &f): _name(f._name), _gradeToSign(f._gradeToSign), _gradeExec(f._gradeExec), _signed(f._signed) {};
 		Form& operator=(const  Form &f);
 
-		std::string getName() {return _name; };
-		int getGrade() { return _gradeToSign; };
-		int getExecGrade() {return _gradeExec; } ;
-		bool getSigned() {return _signed; };
+		std::string getName() const {return this->_name; };
+		int getGrade() const { return this->_gradeToSign; };
+		int getExecGrade() const {return this->_gradeExec; } ;
+		bool getSigned() const {return this->_signed; };
 
 		class gradeTooLowException: public std::exception
 		{
@@ -45,6 +45,8 @@ class Form
 		void beSigned(const Bureaucrat &b);
 		~Form() {};
 };
+
+std::ostream& operator<<(std::ostream&os, const Form &f);
 
 
 #endif

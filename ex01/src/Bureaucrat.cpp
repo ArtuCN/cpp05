@@ -47,3 +47,8 @@ void Bureaucrat::signForm(Form &form)
         
 }
 
+std::ostream& operator<<(std::ostream&os, const Bureaucrat &b)
+{
+	os << b.getName() << " grade: "<< b.getGrade()<< "\n";
+	return os;
+}

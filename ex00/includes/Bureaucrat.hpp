@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <ostream>
 #define MAX 150
 #define MIN 1
 
@@ -24,8 +25,8 @@ class  Bureaucrat
 		std::string getName() const { return _name; }
 		void setGrade(int grade) { _grade = grade; }
 
-		void incrementGrade(const unsigned int &num);
-		void decrementGrade(const unsigned int &num);
+		void incrementGrade(const int &num);
+		void decrementGrade(const int &num);
 		
 		class GradeTooLowException: public std::exception {
 			public:
@@ -44,6 +45,7 @@ class  Bureaucrat
 
 };
 
+std::ostream& operator<<(std::ostream&os, const Bureaucrat &b);
 
 #endif
 

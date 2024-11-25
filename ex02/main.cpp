@@ -12,6 +12,7 @@ int	main()
 	srand(time(0));
 	try {
 		ShrubberyCreationForm scf("brokenTree");
+		std::cout<<scf;
 		Bureaucrat bur("Artu", 1);
 		bur.signAForm(scf);
 		scf.beSigned(bur);

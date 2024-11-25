@@ -1,5 +1,6 @@
 #include "../includes/Form.hpp"
 #include "../includes/Bureaucrat.hpp"
+#include <ostream>
 
 Form &Form::operator=(const Form &f)
 {
@@ -29,4 +30,10 @@ const char *Form::gradeTooHighException::what() const throw()
 const char *Form::gradeTooLowException::what() const throw()
 {
     return "Grade too low!";
+}
+
+std::ostream& operator<<(std::ostream &os, const Form& f)
+{
+	os << f.getName() << " grade to sign: "<< f.getGrade() << " grade to exec: "<< f.getExecGrade()<< " bool is signed: "<< f.getSigned()<< "\n";
+	return os;
 }

@@ -16,10 +16,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b) {
     return *this;
 }
 
-void Bureaucrat::incrementGrade(const unsigned int &num) {
+void Bureaucrat::incrementGrade(const int &num) {
     
-    if (num < _grade)
-        throw GradeTooHighException();
     _grade -= num;
     if (_grade < 1)
         throw GradeTooHighException();
@@ -27,7 +25,7 @@ void Bureaucrat::incrementGrade(const unsigned int &num) {
         throw GradeTooLowException();
 }
 
-void Bureaucrat::decrementGrade(const unsigned int &num) {
+void Bureaucrat::decrementGrade(const int &num) {
     _grade += num;
     if (_grade < 1)
         throw GradeTooHighException();
@@ -35,4 +33,8 @@ void Bureaucrat::decrementGrade(const unsigned int &num) {
         throw GradeTooLowException();
 }
 
-
+std::ostream& operator<<(std::ostream&os, const Bureaucrat &b)
+{
+	os << b.getName() << " grade: "<< b.getGrade()<< "\n";
+	return os;
+}

@@ -4,10 +4,10 @@ int main()
 {
 	try
 	{
-		Bureaucrat b1("Normal");
-		std::cout<<b1.getName() << " grade is " << b1.getGrade() <<" !\n";
-		b1.decrementGrade(80);
-		std::cout<<b1.getName() << " grade is " << b1.getGrade() <<" !\n";
+		Bureaucrat b1("Normal", 75);
+		std::cout<<b1;
+		b1.decrementGrade(76);
+		std::cout<<b1;
 	}
 	catch (Bureaucrat::GradeTooLowException &low)
 	{
